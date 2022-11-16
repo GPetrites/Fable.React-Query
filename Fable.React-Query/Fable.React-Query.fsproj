@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>Fable.React_Hook_Form</RootNamespace>
+    <RootNamespace>Fable.React_Query</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageProjectUrl>https://gpetrites.github.io/Fable.React-Hook-Form</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/GPetrites/Fable.React-Hook-Form</RepositoryUrl>
+    <PackageProjectUrl>https://gpetrites.github.io/Fable.React-Query</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/GPetrites/Fable.React-Query</RepositoryUrl>
     <Authors>Greg Petrites</Authors>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <Description>Fable bindings for react-hook-form</Description>
+    <Description>Fable bindings for react-query</Description>
     <PackageTags>fsharp;fable;react;html</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>readme.md</PackageReadmeFile>

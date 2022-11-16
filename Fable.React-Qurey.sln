@@ -20,7 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{4C120228-B6D1-4486-9E3E-C73799C3BAD4}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Fable.React-Hook-Form", "Fable.React-Hook-Form\Fable.React-Hook-Form.fsproj", "{720FC66E-4B2E-496C-807E-6FCCD9965299}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Fable.React-Query", "Fable.React-Query\Fable.React-Query.fsproj", "{720FC66E-4B2E-496C-807E-6FCCD9965299}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

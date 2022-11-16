@@ -19,7 +19,7 @@
         <PackageReference Include="Fable.DateFunctions" Version="3.9.0" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\Fable.React-Hook-Form\Fable.React-Hook-Form.fsproj" />
+      <ProjectReference Include="..\Fable.React-Query\Fable.React-Query.fsproj" />
     </ItemGroup>
     <ItemGroup>
       <PackageReference Update="FSharp.Core" Version="6.0.4" />
