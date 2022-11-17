@@ -25,7 +25,7 @@ let getRepoDataAsync = getRepoData >> Async.AwaitPromise
 let Example () =
     let repoData = Query.useQuery ("repoData", getRepoData) []
 
-    let repoData' = Query.useQuery ("repoData", getRepoDataAsync) []
+    //let repoData' = Query.useQuery ("repoData'", getRepoDataAsync) []
 
     if repoData.isLoading then
         Html.div "Loading..."
@@ -39,8 +39,3 @@ let Example () =
             Html.strong (sprintf "✨ %i" data.stargazers_count)
             Html.strong (sprintf "🍴 %i" data.forks_count)
         ]
-
-[<ReactComponent>]
-let App () =
-    let queryClient = QueryClient []
-    QueryClientProvider queryClient [ Example(); ReactQueryDevtools [] ]
