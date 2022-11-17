@@ -19,7 +19,7 @@ type Query =
         : IQuery<'TData> =
         let props =
             createObj [
-                "queryKey" ==> queryKey
+                "queryKey" ==> [ queryKey ]
                 "queryFn" ==> queryFn
             ]
 

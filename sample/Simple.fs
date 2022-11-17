@@ -43,4 +43,4 @@ let Example () =
 [<ReactComponent>]
 let App () =
     let queryClient = QueryClient []
-    QueryClientProvider queryClient [ Example() ]
+    QueryClientProvider queryClient [ Example(); ReactQueryDevtools [] ]

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>Fable.React_Query</RootNamespace>
@@ -15,7 +15,8 @@
   <ItemGroup>
     <None Include="..\readme.md" Pack="true" PackagePath="\" />
     <Compile Include="Query.fs" />
-    <Compile Include="ReactQuery.fs" />
+    <Compile Include="Provider.fs" />
+    <Compile Include="DevTools.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Fable.Browser.Dom" Version="2.10.0" />
@@ -24,12 +25,11 @@
     <PackageReference Include="Feliz" Version="1.64.0" />
     <PackageReference Update="FSharp.Core" Version="6.0.4" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="*.fsproj; *.fs; *.js;" Exclude="**\*.fs.js" PackagePath="fable\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <NpmDependencies>
       <NpmPackage Name="@tanstack/react-query" Version="gte 4.0.0 lt 5.0" />
+      <NmmpmPackage Name="@tanstack/react-query-devtools" Version="gte 4.0.0 lt 5.0" />
     </NpmDependencies>
   </PropertyGroup>
 </Project>
