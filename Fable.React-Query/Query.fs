@@ -1,11 +1,7 @@
 namespace Fable.ReactQuery
 
-open Fable.Core.JsInterop
-open Feliz
-open Browser.Dom
-open Feliz.ReactApi
 open Fable.Core.JS
-open System
+open Fable.Core.JsInterop
 open Fable.Core
 
 type IQuery<'TData> = { isLoading: bool; data: 'TData }

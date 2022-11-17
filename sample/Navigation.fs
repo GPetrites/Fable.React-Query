@@ -25,7 +25,7 @@ let Navigation () =
               ]
               match example with
               | Simple -> Simple.Example()
-              | Basic -> Html.h1 "Basic"
+              | Basic -> Basic.Example()
           ]
           ReactQueryDevtools [
               InitialIsOpen false

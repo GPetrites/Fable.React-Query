@@ -1,10 +1,9 @@
 module Simple
 
-open Feliz
-open Fable.ReactQuery
-open Fetch
-open Browser.Dom
 open Fable.Core.Extensions
+open Fable.ReactQuery
+open Feliz
+open Fetch
 
 type IRepoData =
     { name: string

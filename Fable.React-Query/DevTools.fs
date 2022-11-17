@@ -1,9 +1,9 @@
 namespace Fable.ReactQuery
 
+open Fable.Core
 open Fable.Core.JsInterop
 open Feliz
 open Feliz.ReactApi
-open Fable.Core
 
 type DevTools = InitialIsOpen of bool
 
