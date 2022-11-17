@@ -17,10 +17,13 @@
     <Compile Include="Validation.fs" />
     <Compile Include="Form.fs" />
     <Compile Include="Controller.fs" />
+    <Compile Include="ReactQuery.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Fable.Browser.Dom" Version="2.10.0" />
-    <PackageReference Include="Fable.Core" Version="3.7.0" />
+    <PackageReference Include="Fable.Core" Version="3.7.1" />
+    <PackageReference Include="Fable.React" Version="8.0.1" />
+    <PackageReference Include="Feliz" Version="1.64.0" />
     <PackageReference Update="FSharp.Core" Version="6.0.4" />
   </ItemGroup>
   <ItemGroup>
@@ -28,7 +31,7 @@
   </ItemGroup>
   <PropertyGroup>
     <NpmDependencies>
-      <NpmPackage Name="react-hook-form" Version="gte 7.0.0 lt 8.0" />
+      <NpmPackage Name="@tanstack/react-query" Version="gte 4.0.0 lt 5.0" />
     </NpmDependencies>
   </PropertyGroup>
 </Project>
