@@ -27,19 +27,21 @@ type IQuery<'TData> =
 
 [<Erase>]
 type Query =
+    static member useQueryClient(props: obj list) : IQueryClient =
+        import "useQueryClient" "@tanstack/react-query"
+
     static member inline internalUseQuery<'TData>
-        (queryKey: string)
+        (queryKey: obj array)
         (queryFn: unit -> Promise<'TData>)
         (opts: obj list)
         : IQuery<'TData> =
         let props =
             createObj [
-                "queryKey" ==> [| queryKey |]
+                "queryKey" ==> queryKey
                 "queryFn" ==> queryFn
             ]
 
         let qry: IQueryInternal<'TData> = import "useQuery" "@tanstack/react-query" props
-        console.log (qry)
 
         { isLoading = qry.isLoading
           isFetching = qry.isFetching
@@ -52,14 +54,14 @@ type Query =
           error = qry.error }
 
     static member inline useQuery<'TData>((queryKey: string), (queryFn: unit -> Promise<'TData>)) =
-        Query.internalUseQuery queryKey queryFn
+        Query.internalUseQuery [| queryKey |] queryFn
 
     static member inline useQuery<'TKey1, 'TData>
         (
             (queryKey: string, key1: 'TKey1),
             (queryFn: 'TKey1 -> Promise<'TData>)
         ) =
-        Query.internalUseQuery queryKey (fun () -> queryFn key1)
+        Query.internalUseQuery [| queryKey; key1 |] (fun () -> queryFn key1)
 
     static member inline useQuery<'TData>((queryKey: string), (queryFn: unit -> Async<'TData>)) =
-        Query.internalUseQuery queryKey (queryFn >> Async.StartAsPromise)
+        Query.internalUseQuery [| queryKey |] (queryFn >> Async.StartAsPromise)

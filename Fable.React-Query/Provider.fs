@@ -6,11 +6,12 @@ open Feliz.ReactApi
 
 [<AutoOpen>]
 module Provider =
-    type IQueryClient = obj
+    type IQueryClient =
+        abstract member getQueryData<'TData> : obj -> 'TData option
 
     let QueryClient (props: obj list) : IQueryClient =
         let queryClient = import "QueryClient" "@tanstack/react-query"
-        createNew queryClient ()
+        !! createNew queryClient ()
 
     let QueryClientProvider (client: IQueryClient) (children: ReactElement list) =
         let reactApi: IReactApi = importDefault "react"

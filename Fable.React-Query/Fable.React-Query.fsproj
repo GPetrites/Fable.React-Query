@@ -14,8 +14,8 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\readme.md" Pack="true" PackagePath="\" />
-    <Compile Include="Query.fs" />
     <Compile Include="Provider.fs" />
+    <Compile Include="Query.fs" />
     <Compile Include="DevTools.fs" />
   </ItemGroup>
   <ItemGroup>

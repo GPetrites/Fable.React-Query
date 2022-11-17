@@ -3,6 +3,7 @@ module Basic
 open Feliz
 open Fetch
 open Fable.ReactQuery
+open Fable.Core.JS
 
 type IPostHeader = { id: int; title: string }
 
@@ -25,7 +26,14 @@ let getPost (postId: int) =
 
 [<ReactComponent>]
 let Posts (setPostId: int option -> unit) =
+    let queryClient = Query.useQueryClient []
     let posts = Query.useQuery ("posts", getPosts) []
+
+    let post = queryClient.getQueryData<IPost> ("post", 1)
+
+    match post with
+    | Some p -> console.log (p)
+    | None -> console.log ("Not cached")
 
     Html.div [
         Html.h1 "posts"
@@ -37,6 +45,8 @@ let Posts (setPostId: int option -> unit) =
                 React.fragment [
                     Html.div [
                         for post in posts.data ->
+                            let cached = queryClient.getQueryData<IPost> ("post", post.id)
+
                             Html.p [
                                 prop.key post.id
                                 prop.children [
@@ -44,6 +54,13 @@ let Posts (setPostId: int option -> unit) =
                                         prop.href "#"
                                         prop.text post.title
                                         prop.onClick (fun _ -> setPostId (Some post.id))
+                                        match cached with
+                                        | Some _ ->
+                                            prop.style [
+                                                style.fontWeight.bold
+                                                style.color.green
+                                            ]
+                                        | None -> prop.style []
                                     ]
                                 ]
                             ]
