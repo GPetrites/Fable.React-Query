@@ -14,9 +14,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\readme.md" Pack="true" PackagePath="\" />
-    <Compile Include="Validation.fs" />
-    <Compile Include="Form.fs" />
-    <Compile Include="Controller.fs" />
+    <Compile Include="Query.fs" />
     <Compile Include="ReactQuery.fs" />
   </ItemGroup>
   <ItemGroup>

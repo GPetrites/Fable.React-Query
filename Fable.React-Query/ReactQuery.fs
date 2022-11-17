@@ -8,13 +8,8 @@ open Fable.Core.JS
 open System
 
 [<AutoOpen>]
-module Query =
+module Provider =
     type IQueryClient = obj
-
-    type IQuery<'TData> = {
-        isLoading: bool
-        data: 'TData
-    }
 
     let QueryClient (props: obj list) : IQueryClient =
         let queryClient = import "QueryClient" "@tanstack/react-query"
@@ -29,10 +24,3 @@ module Query =
                 "children" ==> (reactApi.Children.toArray (Array.ofSeq children))
             ]
         )
-
-    let useQuery<'TData> (queryKey:string) (queryFn: unit -> Promise<'TData>) opts : IQuery<'TData> =
-        let props = createObj [
-            "queryKey" ==> queryKey
-            "queryFn" ==> queryFn
-        ]
-        import "useQuery" "@tanstack/react-query" props
