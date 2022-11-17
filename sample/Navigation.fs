@@ -10,7 +10,7 @@ type Example =
 [<ReactComponent>]
 let Navigation () =
     let queryClient = QueryClient []
-    let (example, setExample) = React.useState (Simple)
+    let (example, setExample) = React.useState (Basic)
 
     QueryClientProvider
         queryClient
